@@ -44,7 +44,7 @@ SRC_2 = src/push_swap/algor.c \
         src/push_swap/ft_rotate_type.c \
 
 BONUS_SRC = src/checker/checker.c \
-            src/checker/checker_utils.c \
+            src/checker/checker_ut.c \
 
 OBJ_1 = ${SRC_1:.c=.o}
 OBJ_2 = ${SRC_2:.c=.o}

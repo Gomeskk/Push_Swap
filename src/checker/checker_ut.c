@@ -6,7 +6,7 @@
 /*   By: joafaust <joafaust@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 11:40:10 by joafaust          #+#    #+#             */
-/*   Updated: 2024/11/27 14:43:23 by joafaust         ###   ########.fr       */
+/*   Updated: 2024/11/27 16:23:10 by joafaust         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,8 @@ int	main(int argc, char **argv)
 	char	*line;
 
 	b = NULL;
-	a = ft_process(argc, argv);
-	if (!a || ft_checkdup(a))
+	a = process(argc, argv);
+	if (!a || checkdup(a))
 	{
 		ft_free (&a);
 		ft_error_ch();
