@@ -50,7 +50,7 @@ OBJ_1 = ${SRC_1:.c=.o}
 OBJ_2 = ${SRC_2:.c=.o}
 BONUS_OBJ = ${BONUS_SRC:.c=.o}
 
-INCLUDE = -L ./LIBFT -lft
+INCLUDE = ./LIBFT/libft.a
 
 ### RULES ###
 .c.o:
