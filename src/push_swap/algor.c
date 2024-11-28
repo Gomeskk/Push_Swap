@@ -6,7 +6,7 @@
 /*   By: joafaust <joafaust@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 11:49:33 by joafaust          #+#    #+#             */
-/*   Updated: 2024/11/28 17:24:39 by joafaust         ###   ########.fr       */
+/*   Updated: 2024/11/28 17:56:05 by joafaust         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 /*  This function does three things.
  1. It checks if the number of input is less than 2.
  2. It checks if the number of input is equal to 2.
-	If it is, it means it is a quoted string.
+    If it is, it means it is a quoted string.
  3. It checks if the number of input is greater than 2.
-		If it is, it lists the arguements. */
+     If it is, it lists the arguements. */
 int	ft_atoi2(const char *str)
 {
 	int				mod;
@@ -76,10 +76,10 @@ t_stack	*sub_process(char **av)
 /*  This function does three things.
  1. It checks if the number of input is less than 2.
  2. It checks if the number of input is equal to 2.
-	If it is, it means it is a quoted string. Call
-		another function. <sub_process>
+    If it is, it means it is a quoted string. Call
+	  another function. <sub_process>
  3. It checks if the number of input is greater than 2.
-		If it is, it lists the arguements. */
+     If it is, it lists the arguements. */
 t_stack	*process(int ac, char **av)
 {
 	t_stack	*a;
@@ -109,11 +109,11 @@ t_stack	*process(int ac, char **av)
 }
 
 /* This function checks if the argument its a letter */
-int	its_letters(char *str)
+int its_letters (char *str)
 {
 	while (*str)
 	{
-		if (!ft_isdigit(*str))
+		if (!ft_isdigit(*str) && *str != '-' && *str != '+')
 			return (0);
 		str++;
 	}
@@ -128,3 +128,4 @@ void	handle_error(t_stack **stack)
 		ft_free(stack);
 	exit(1);
 }
+
