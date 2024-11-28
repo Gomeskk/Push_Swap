@@ -6,7 +6,7 @@
 /*   By: joafaust <joafaust@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 12:34:08 by joafaust          #+#    #+#             */
-/*   Updated: 2024/11/27 12:35:54 by joafaust         ###   ########.fr       */
+/*   Updated: 2024/11/28 12:51:24 by joafaust         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	main(int ac, char **av)
 	{
 		ft_free(&a);
 		ft_error();
+		return (1);
 	}
 	if (!ft_checksorted(a))
 		ft_sort(&a);

@@ -3,3 +3,6 @@ errors being printed in stdout instead of stderror
 atoi is not protected from empty strings
 program leaks when called like this "./push_swap a" pretty sure its because of how you parse non digits cus "./push_swap -1 -1 as also leaks
 check ft_atoi2 for no getting out in the middle!
+caso
+- ola
+- 1.2 1 2

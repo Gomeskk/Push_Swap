@@ -6,7 +6,7 @@
 /*   By: joafaust <joafaust@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 11:49:33 by joafaust          #+#    #+#             */
-/*   Updated: 2024/11/28 12:01:44 by joafaust         ###   ########.fr       */
+/*   Updated: 2024/11/28 13:07:18 by joafaust         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,12 @@ int	ft_atoi2(const char *str)
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
-			ft_error();
+			return (1);
 		i = i * 10 + (*str - 48);
 		str++;
 	}
 	if ((mod * i) > 2147483647 || (mod * i) < -2147483648)
-		ft_error();
+		return (1);
 	return (mod * i);
 }
 
@@ -95,11 +95,23 @@ t_stack	*process(int ac, char **av)
 	}
 	if (ac == 2)
 		a = sub_process(av);
+	if(!a)
+	{
+		ft_error();
+		ft_free(&a);
+		exit(1);
+	}
 	else
 	{
 		while (i < ac)
 		{
 			j = ft_atoi2(av[i]);
+			if (ft_atoi2(av[i]) == 1)
+			{
+				ft_error();
+				ft_free(&a);
+				exit(1);
+			}
 			ft_add_back(&a, ft_stack_new(j));
 			i++;
 		}

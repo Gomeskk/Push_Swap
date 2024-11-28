@@ -6,7 +6,7 @@
 /*   By: joafaust <joafaust@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 11:58:38 by joafaust          #+#    #+#             */
-/*   Updated: 2024/11/28 12:06:18 by joafaust         ###   ########.fr       */
+/*   Updated: 2024/11/28 12:16:16 by joafaust         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	ft_checksorted(t_stack *stack_a)
 	int	i;
 
 	i = stack_a->nbr;
-	printf("number = a gay%ld\n", stack_a->nbr);
 	while (stack_a)
 	{
 		if (i > stack_a->nbr)
