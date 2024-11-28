@@ -6,7 +6,7 @@
 /*   By: joafaust <joafaust@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 11:53:52 by joafaust          #+#    #+#             */
-/*   Updated: 2024/11/27 12:36:49 by joafaust         ###   ########.fr       */
+/*   Updated: 2024/11/28 12:27:27 by joafaust         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	alpha_check(char **av)
 		while ((av[i][j]) != '\0')
 		{
 			if (ft_isalpha(av[i][j]))
-				ft_error();
+				return (ft_error());
 			j++;
 		}
 		i++;
