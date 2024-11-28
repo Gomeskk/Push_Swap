@@ -6,7 +6,7 @@
 /*   By: joafaust <joafaust@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 11:49:33 by joafaust          #+#    #+#             */
-/*   Updated: 2024/11/28 15:20:40 by joafaust         ###   ########.fr       */
+/*   Updated: 2024/11/28 16:46:24 by joafaust         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 /*  This function does three things.
  1. It checks if the number of input is less than 2.
  2. It checks if the number of input is equal to 2.
-    If it is, it means it is a quoted string.
+	If it is, it means it is a quoted string.
  3. It checks if the number of input is greater than 2.
-     If it is, it lists the arguements. */
+		If it is, it lists the arguements. */
 int	ft_atoi2(const char *str)
 {
 	int				mod;
@@ -38,12 +38,12 @@ int	ft_atoi2(const char *str)
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
-			return (NULL);
+			return (0);
 		i = i * 10 + (*str - 48);
 		str++;
 	}
 	if ((mod * i) > 2147483647 || (mod * i) < -2147483648)
-		return (NULL);
+		return (0);
 	return (mod * i);
 }
 
@@ -76,39 +76,55 @@ t_stack	*sub_process(char **av)
 /*  This function does three things.
  1. It checks if the number of input is less than 2.
  2. It checks if the number of input is equal to 2.
-    If it is, it means it is a quoted string. Call
-	  another function. <sub_process>
+	If it is, it means it is a quoted string. Call
+		another function. <sub_process>
  3. It checks if the number of input is greater than 2.
-     If it is, it lists the arguements. */
+		If it is, it lists the arguements. */
 t_stack	*process(int ac, char **av)
 {
 	t_stack	*a;
 	int		i;
 	int		j;
+	char	*c;
 
-	i = 1;
+	i = 0;
 	a = NULL;
 	if (ac < 2)
+		handle_error(NULL);
+	while (++i < ac)
 	{
-		ft_error();
-		exit(1);
-	}
-	if (ac == 2)
-		a = sub_process(av);
-	else
-	{
-		while (i < ac)
+		if (!its_letters(av[i]))
+			handle_error(&a);
+		j = ft_atoi2(av[i]);
+		c = ft_itoa(j);
+		if (c != av[i])
 		{
-			j = ft_atoi2(av[i]);
-			if (!ft_atoi2(av[i]))
-			{
-				ft_error();
-				ft_free(&a);
-				exit(1);
-			}
-			ft_add_back(&a, ft_stack_new(j));
-			i++;
+			free(c);
+			handle_error(&a);
 		}
+		free(c);
+		ft_add_back(&a, ft_stack_new(j));
 	}
 	return (a);
+}
+
+/* This function checks if the argument its a letter */
+int	its_letters(char *str)
+{
+	while (*str)
+	{
+		if (!ft_isdigit(*str))
+			return (0);
+		str++;
+	}
+	return (1);
+}
+
+/* Handle errors */
+void	handle_error(t_stack **stack)
+{
+	ft_error();
+	if (stack)
+		ft_free(stack);
+	exit(1);
 }
