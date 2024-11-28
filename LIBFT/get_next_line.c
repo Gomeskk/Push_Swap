@@ -6,7 +6,7 @@
 /*   By: joafaust <joafaust@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:29:13 by joafaust          #+#    #+#             */
-/*   Updated: 2024/11/27 11:46:38 by joafaust         ###   ########.fr       */
+/*   Updated: 2024/11/28 18:11:38 by joafaust         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-size_t	ft_strlen(const char *str)
+size_t	gl_strlen(const char *str)
 {
 	size_t	i;
 
@@ -33,7 +33,7 @@ char	*ft_strjoin1(char *str1, char *str2)
 	char	*retn;
 	size_t	i;
 
-	retn = malloc(ft_strlen(str1) + ft_strlen(str2) + 1);
+	retn = malloc(gl_strlen(str1) + gl_strlen(str2) + 1);
 	if (!retn)
 		return (NULL);
 	i = 0;

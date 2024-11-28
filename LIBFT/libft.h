@@ -6,7 +6,7 @@
 /*   By: joafaust <joafaust@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 06:21:01 by joafaust          #+#    #+#             */
-/*   Updated: 2024/11/27 11:47:21 by joafaust         ###   ########.fr       */
+/*   Updated: 2024/11/28 18:11:52 by joafaust         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,6 @@ void				*ft_memalloc(size_t size);
 char				*get_next_line(int fd);
 char				*ft_strjoin1(char *str1, char *str2);
 int					nl(char *line);
-size_t				ft_strlen(char const *str);
+size_t				gl_strlen(char const *str);
 
 #endif
