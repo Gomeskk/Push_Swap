@@ -5,4 +5,3 @@ program leaks when called like this "./push_swap a" pretty sure its because of h
 check ft_atoi2 for no getting out in the middle!
 caso
 - ola
-- 1.2 1 2
