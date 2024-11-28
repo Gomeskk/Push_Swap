@@ -6,7 +6,7 @@
 /*   By: joafaust <joafaust@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 11:49:33 by joafaust          #+#    #+#             */
-/*   Updated: 2024/11/28 16:46:24 by joafaust         ###   ########.fr       */
+/*   Updated: 2024/11/28 17:24:39 by joafaust         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ t_stack	*process(int ac, char **av)
 			handle_error(&a);
 		j = ft_atoi2(av[i]);
 		c = ft_itoa(j);
-		if (c != av[i])
+		if (ft_strncmp(c, av[i], ft_strlen(av[i])))
 		{
 			free(c);
 			handle_error(&a);
