@@ -9,9 +9,9 @@ NOC     = \033[0m
 
 ### COMPILATION ###
 NAME = push_swap
-CC = gcc
+CC = cc
 RM = rm -f
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g
 LIBFTDIR = LIBFT/
 OBJ_DIR = obj/
 BONUS = checker

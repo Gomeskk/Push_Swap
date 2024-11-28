@@ -6,7 +6,7 @@
 /*   By: joafaust <joafaust@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 11:49:33 by joafaust          #+#    #+#             */
-/*   Updated: 2024/11/27 14:44:11 by joafaust         ###   ########.fr       */
+/*   Updated: 2024/11/28 12:01:44 by joafaust         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,10 @@ t_stack	*process(int ac, char **av)
 	i = 1;
 	a = NULL;
 	if (ac < 2)
+	{
 		ft_error();
+		exit(1);
+	}
 	if (ac == 2)
 		a = sub_process(av);
 	else
