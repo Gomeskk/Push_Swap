@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/gomes/Push_Swap",
-      "program": "/home/gomes/Push_Swap/build/Debug/outDebug",
+      "cwd": "/home/gomes/Push_Swap/src/push_swap",
+      "program": "/home/gomes/Push_Swap/src/push_swap/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
