@@ -6,7 +6,7 @@
 /*   By: joafaust <joafaust@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 12:10:08 by joafaust          #+#    #+#             */
-/*   Updated: 2024/11/27 12:51:00 by joafaust         ###   ########.fr       */
+/*   Updated: 2024/11/30 17:26:27 by joafaust         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,8 @@ t_stack	*ft_parse_args_quoted(char **av)
 {
 	t_stack	*stack_a;
 	char	**tmp;
-	int		i;
-	int		j;
 
 	stack_a = NULL;
-	i = 0;
 	tmp = ft_split(av[1], 32);
 	list_args(tmp, &stack_a);
 	ft_freestr(tmp);

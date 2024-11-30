@@ -6,7 +6,7 @@
 /*   By: joafaust <joafaust@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 12:07:07 by joafaust          #+#    #+#             */
-/*   Updated: 2024/11/28 12:31:08 by joafaust         ###   ########.fr       */
+/*   Updated: 2024/11/30 17:26:06 by joafaust         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@
 t_stack	*ft_parse(int ac, char **av)
 {
 	t_stack	*stack_a;
-	int		i;
-	int		j;
 
-	i = 1;
 	stack_a = NULL;
 	if (ac < 2)
 		ft_error();

@@ -6,7 +6,7 @@
 /*   By: joafaust <joafaust@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 11:49:33 by joafaust          #+#    #+#             */
-/*   Updated: 2024/11/28 17:56:05 by joafaust         ###   ########.fr       */
+/*   Updated: 2024/11/30 18:56:23 by joafaust         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 /*  This function does three things.
  1. It checks if the number of input is less than 2.
  2. It checks if the number of input is equal to 2.
-    If it is, it means it is a quoted string.
+	If it is, it means it is a quoted string.
  3. It checks if the number of input is greater than 2.
-     If it is, it lists the arguements. */
-int	ft_atoi2(const char *str)
+		If it is, it lists the arguements. */
+int	ft_atoi2(const char *str, t_stack *a)
 {
 	int				mod;
 	long long int	i;
@@ -37,55 +37,26 @@ int	ft_atoi2(const char *str)
 		str++;
 	while (*str)
 	{
-		if (!ft_isdigit(*str))
-			return (0);
+ 		/*if (!ft_isdigit(*str)) nao está a fazer nada
+			return (0); */
 		i = i * 10 + (*str - 48);
 		str++;
+		if ((mod * i) > 2147483647 || (mod * i) < -2147483648)
+			handle_error(&a);
 	}
-	if ((mod * i) > 2147483647 || (mod * i) < -2147483648)
-		return (0);
 	return (mod * i);
-}
-
-/*  This function works and sorts the stacks
- in case of they are passed in between quotation
- marks. In this scenario, this function takes the
- string, and splits the numbers in order to create
- seperated integer number. */
-t_stack	*sub_process(char **av)
-{
-	t_stack	*a;
-	char	**tmp;
-	int		i;
-	int		j;
-
-	a = NULL;
-	i = 0;
-	tmp = ft_split(av[1], 32);
-	while (tmp[i])
-	{
-		j = ft_atoi2(tmp[i]);
-		ft_add_back(&a, ft_stack_new(j));
-		i++;
-	}
-	ft_freestr(tmp);
-	free(tmp);
-	return (a);
 }
 
 /*  This function does three things.
  1. It checks if the number of input is less than 2.
  2. It checks if the number of input is equal to 2.
-    If it is, it means it is a quoted string. Call
-	  another function. <sub_process>
  3. It checks if the number of input is greater than 2.
-     If it is, it lists the arguements. */
+		If it is, it lists the arguements. */
 t_stack	*process(int ac, char **av)
 {
 	t_stack	*a;
 	int		i;
 	int		j;
-	char	*c;
 
 	i = 0;
 	a = NULL;
@@ -93,39 +64,14 @@ t_stack	*process(int ac, char **av)
 		handle_error(NULL);
 	while (++i < ac)
 	{
+		if (checkk_signal(av[i]))
+			handle_error(&a);
+		if (!is_invalid_quotes(av[i]))
+			handle_error(&a);
 		if (!its_letters(av[i]))
 			handle_error(&a);
-		j = ft_atoi2(av[i]);
-		c = ft_itoa(j);
-		if (ft_strncmp(c, av[i], ft_strlen(av[i])))
-		{
-			free(c);
-			handle_error(&a);
-		}
-		free(c);
+		j = ft_atoi2(av[i], a);
 		ft_add_back(&a, ft_stack_new(j));
 	}
 	return (a);
 }
-
-/* This function checks if the argument its a letter */
-int its_letters (char *str)
-{
-	while (*str)
-	{
-		if (!ft_isdigit(*str) && *str != '-' && *str != '+')
-			return (0);
-		str++;
-	}
-	return (1);
-}
-
-/* Handle errors */
-void	handle_error(t_stack **stack)
-{
-	ft_error();
-	if (stack)
-		ft_free(stack);
-	exit(1);
-}
-
