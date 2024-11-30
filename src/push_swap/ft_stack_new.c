@@ -6,7 +6,7 @@
 /*   By: joafaust <joafaust@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 12:20:34 by joafaust          #+#    #+#             */
-/*   Updated: 2024/11/30 18:23:01 by joafaust         ###   ########.fr       */
+/*   Updated: 2024/11/30 19:28:54 by joafaust         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_stack	*ft_stack_new(int content)
 
 	new = malloc(sizeof (t_stack));
 	if (!new)
-		ft_error();
+		return (NULL);
 	new->nbr = content;
 	new->next = NULL;
 	return (new);

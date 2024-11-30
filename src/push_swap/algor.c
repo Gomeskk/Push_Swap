@@ -6,7 +6,7 @@
 /*   By: joafaust <joafaust@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 11:49:33 by joafaust          #+#    #+#             */
-/*   Updated: 2024/11/30 18:56:23 by joafaust         ###   ########.fr       */
+/*   Updated: 2024/11/30 19:47:25 by joafaust         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,6 @@ int	ft_atoi2(const char *str, t_stack *a)
 
 	i = 0;
 	mod = 1;
-	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\f'
-		|| *str == '\v' || *str == '\r')
-		str++;
 	if (*str == '-')
 	{
 		mod = -1;
@@ -35,10 +32,12 @@ int	ft_atoi2(const char *str, t_stack *a)
 	}
 	else if (*str == '+')
 		str++;
+	if (*str == '\0')
+		handle_error(&a);
 	while (*str)
 	{
- 		/*if (!ft_isdigit(*str)) nao está a fazer nada
-			return (0); */
+		if (!ft_isdigit(*str))
+			handle_error(&a);
 		i = i * 10 + (*str - 48);
 		str++;
 		if ((mod * i) > 2147483647 || (mod * i) < -2147483648)
@@ -67,8 +66,6 @@ t_stack	*process(int ac, char **av)
 		if (checkk_signal(av[i]))
 			handle_error(&a);
 		if (!is_invalid_quotes(av[i]))
-			handle_error(&a);
-		if (!its_letters(av[i]))
 			handle_error(&a);
 		j = ft_atoi2(av[i], a);
 		ft_add_back(&a, ft_stack_new(j));

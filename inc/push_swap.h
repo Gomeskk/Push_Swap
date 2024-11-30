@@ -6,7 +6,7 @@
 /*   By: joafaust <joafaust@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 13:27:35 by joafaust          #+#    #+#             */
-/*   Updated: 2024/11/30 18:57:49 by joafaust         ###   ########.fr       */
+/*   Updated: 2024/11/30 19:48:16 by joafaust         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,6 @@ t_stack				*process(int ac, char **av);
 void				ft_sb(t_stack **b, int j);
 void				ft_sort_b_till_3(t_stack **stack_a, t_stack **stack_b);
 void				ft_error_ch(void);
-int					its_letters(char *str);
 void				handle_error(t_stack **stack);
 int					is_invalid_quotes(char *str);
 int					checkk_signal(char *a);
