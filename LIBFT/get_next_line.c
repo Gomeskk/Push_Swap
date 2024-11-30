@@ -6,7 +6,7 @@
 /*   By: joafaust <joafaust@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:29:13 by joafaust          #+#    #+#             */
-/*   Updated: 2024/11/28 18:11:38 by joafaust         ###   ########.fr       */
+/*   Updated: 2024/11/30 22:05:55 by joafaust         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ char	*get_next_line(int fd)
 	line = NULL;
 	while (*buff || read(fd, buff, BUFFER_SIZE) > 0)
 	{
-		line = ft_strjoin(line, buff);
+		line = ft_strjoin1(line, buff);
 		if (nl(buff) == 1)
 			break ;
 	}
