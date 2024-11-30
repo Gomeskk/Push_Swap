@@ -11,7 +11,7 @@ NOC     = \033[0m
 NAME = push_swap
 CC = cc
 RM = rm -f
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g
 LIBFTDIR = LIBFT/
 OBJ_DIR = obj/
 BONUS = checker
@@ -42,6 +42,7 @@ SRC_2 = src/push_swap/algor.c \
         src/push_swap/ft_sort_big.c \
         src/push_swap/ft_sort_three.c \
         src/push_swap/ft_rotate_type.c \
+        src/push_swap/handling_process.c \
 
 BONUS_SRC = src/checker/checker.c \
             src/checker/checker_ut.c \
@@ -55,7 +56,7 @@ INCLUDE = ./LIBFT/libft.a
 ### RULES ###
 .c.o:
 	@echo "$(BLUE)Compiling: $(NOC)$< -> $(YELLOW)$@$(NOC)"
-	@${CC} -c $< -o ${<:.c=.o}
+	${CC} $(FLAGS) -c $< -o ${<:.c=.o}
 
 ${NAME}: ${OBJ_1} ${OBJ_2}
 	@echo "$(CYAN)Building Libft...$(NOC)"

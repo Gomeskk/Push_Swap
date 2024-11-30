@@ -6,7 +6,7 @@
 /*   By: joafaust <joafaust@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 13:27:35 by joafaust          #+#    #+#             */
-/*   Updated: 2024/11/28 16:47:06 by joafaust         ###   ########.fr       */
+/*   Updated: 2024/11/30 18:57:49 by joafaust         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ int					ft_find_place_b(t_stack *stack_b, int nbr_push);
 int					ft_find_place_a(t_stack *a, int nbr);
 void				ft_sort(t_stack **stack_a);
 int					ft_checksorted(t_stack *stack_a);
-// void		ft_sort_big(t_stack **stack_a);
 void				ft_sort_three(t_stack **stack_a);
 t_stack				*ft_parse(int ac, char **av);
 t_stack				*ft_parse_args_quoted(char **av);
@@ -86,11 +85,10 @@ char				*ft_check(t_stack **a, t_stack **b, char *line);
 void				ft_checker_sub(t_stack **a, t_stack **b, char *line);
 t_stack				*process(int ac, char **av);
 void				ft_sb(t_stack **b, int j);
-// void		algorithm(int ac, char **av);
 void				ft_sort_b_till_3(t_stack **stack_a, t_stack **stack_b);
-t_stack				*sub_process(char **av);
 void				ft_error_ch(void);
 int					its_letters(char *str);
 void				handle_error(t_stack **stack);
-
+int					is_invalid_quotes(char *str);
+int					checkk_signal(char *a);
 #endif
