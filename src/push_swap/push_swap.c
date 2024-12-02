@@ -6,7 +6,7 @@
 /*   By: joafaust <joafaust@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 12:34:08 by joafaust          #+#    #+#             */
-/*   Updated: 2024/11/30 17:43:10 by joafaust         ###   ########.fr       */
+/*   Updated: 2024/12/02 12:39:14 by joafaust         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	main(int ac, char **av)
 {
 	t_stack	*a;
 
+	if (ac == 1)
+		exit(1);
 	a = process(ac, av);
 	if (!a || checkdup(a))
 	{
