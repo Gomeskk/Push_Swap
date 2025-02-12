@@ -1,6 +1,7 @@
 # Push_swap - 42 Project
+
 ![Sorting Visualization](./Sorting.gif)
-###### I’ve used [push swap visualizer](https://github.com/o-reo/push_swap_visualizer?tab=readme-ov-file/)
+###### I’ve used [push swap visualizer](https://github.com/o-reo/push_swap_visualizer?tab=readme-ov-file/) in order to get this beautiful visualization
 
 ## Introduction
 
