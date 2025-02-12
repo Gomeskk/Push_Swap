@@ -1,4 +1,5 @@
 # Push_swap - 42 Project
+![Sorting Visualization](./sorting.gif)
 
 ## Introduction
 
