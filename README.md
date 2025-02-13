@@ -9,7 +9,7 @@ The **Push_swap** project at 42 is designed to challenge students in algorithmic
 
 ## Concept
 
-Push_swap requires implementing a sorting algorithm using $\color{red}{\textbf{two stacks}}$ ($\color{Darkorange}{\textbf{stack A}}$ and $\color{LightSkyBlue}{\textbf{stack B}}$) and a set of operations. The challenge is to create an efficient sorting solution with as few operations as possible.
+Push_swap requires implementing a sorting algorithm using $\color{crimson}{\textbf{two stacks}}$ ($\color{Darkorange}{\textbf{stack A}}$ and $\color{LightSkyBlue}{\textbf{stack B}}$) and a set of operations. The challenge is to create an efficient sorting solution with as few operations as possible.
 
 ## Mandatory Requirements
 
@@ -87,13 +87,13 @@ To use the checker bonus:
 ```
 ## Common Pitfalls
 
-  - **Using inefficient algorithms** that result in too many operations.
+  - $\color{crimson}{\textbf{Using inefficient algorithms}}$ that result in too many operations.
 
-  - **Not handling edge cases** like sorted input or repeated numbers.
+  - $\color{crimson}{\textbf{Not handling edge cases}}$ like sorted input or repeated numbers.
 
-  - **Failing to implement the correct logic** for each operation.
+  - $\color{crimson}{\textbf{Failing to implement the correct logic}}$ for each operation.
 
-  - **Memory leaks** due to improper handling of dynamically allocated memory.
+  - $\color{crimson}{\textbf{Memory leaks}}$ due to improper handling of dynamically allocated memory.
 
 ## Conclusion
 
